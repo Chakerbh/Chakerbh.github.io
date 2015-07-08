@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://blog.chaker.tn/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-08T02:25:29+01:00</updated>
+  <updated>2015-07-08T02:32:06+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Another post]]></title>
+    <link href="http://blog.chaker.tn/blog/another-post/"/>
+    <updated>2015-07-08T02:31:34+01:00</updated>
+    <id>http://blog.chaker.tn/blog/another-post</id>
+    <content type="html"><![CDATA[<p>This is another post.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello world]]></title>
