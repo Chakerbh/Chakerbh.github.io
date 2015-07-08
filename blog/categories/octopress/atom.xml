@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-08T14:34:35+01:00</updated>
+  <updated>2015-07-08T14:36:12+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -20,7 +20,7 @@
     <id>http://blog.chaker.tn/blog/why-i-chose-octopress-and-github</id>
     <content type="html"><![CDATA[<h3>What&#39;s Octopress</h3>
 
-<p><a href="http://octopress.org">Octopress</a> is &quot;A blogging framework for hackers&quot;. It&#39;s based on <a href="http://jekyllrb.com/">Jekyll</a> Which is ruby statics web generator. Octopress is <strong>hackers</strong> so you should be familiar with shell and git commands or at least have the courage try.</p>
+<p><a href="http://octopress.org">Octopress</a> is &quot;A blogging framework for hackers&quot;. It&#39;s based on <a href="http://jekyllrb.com/">Jekyll</a> Which is ruby statics web generator. Octopress is for <strong>hackers</strong> so you should be familiar with shell and git commands or at least have the courage try.</p>
 
 <h3>Why github</h3>
 
