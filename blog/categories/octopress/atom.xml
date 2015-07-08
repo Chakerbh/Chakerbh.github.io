@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: octopress | My Octopress Blog]]></title>
+  <title><![CDATA[Category: octopress | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-08T14:25:53+01:00</updated>
+  <updated>2015-07-08T14:28:05+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
