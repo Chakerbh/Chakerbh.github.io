@@ -7,7 +7,7 @@ categories: octopress Github
 ---
 
 ### What's Octopress
-[Octopress](http://octopress.org) is "A blogging framework for hackers". It's based on [Jekyll](http://jekyllrb.com/) Which is ruby statics web generator. Octopress is for **hackers** so you should be familiar with shell and git commands or at least have the courage try.
+[Octopress](http://octopress.org) is "A blogging framework for hackers". It's based on [Jekyll](http://jekyllrb.com/) Which is ruby statics web generator. Octopress is for **hackers** so you should be familiar with shell and git commands or at least have the courage to try.
 
 ### Why github
 Github is offering service for hosting your **static pages** for free [Github Pages](http://pages.github.com) powered by Jekyll under the hod. This help you to deploy your Octopress blog easily. And git offer more flexible ways to manage your blog content.
@@ -16,7 +16,7 @@ Github is offering service for hosting your **static pages** for free [Github Pa
 ### You didn't tell me why Octopress
 I chosen Octopress for couple of reasons:
 
-+ [markdown](http://daringfireball.net/projects/markdown/): I love to use it when ever it's possible. At Github, Stackoverflow or writing emails.
++ [markdown](http://daringfireball.net/projects/markdown/): posts in Octopress are written in markdown then transformed to HTML. And since I love to use it when ever it's possible (Github, Stackoverflow or writing emails), I found it convient for me.
 + sharing code: With Octopress sharing snippets of code is easier then ever.  Either with markdown or with [gist tag](http://octopress.org/docs/plugins/gist-tag/)
 
     ``` python
