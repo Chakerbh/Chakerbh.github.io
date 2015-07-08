@@ -7,7 +7,7 @@ categories: octopress Github
 ---
 
 ### What's Octopress
-[Octopress](http://octopress.org) is "A blogging framework for hackers". It's based on [Jekyll](http://jekyllrb.com/) Which is ruby statics web generator. Octopress is **hackers** so you should be familiar with shell and git commands or at least have the courage try.
+[Octopress](http://octopress.org) is "A blogging framework for hackers". It's based on [Jekyll](http://jekyllrb.com/) Which is ruby statics web generator. Octopress is for **hackers** so you should be familiar with shell and git commands or at least have the courage try.
 
 ### Why github
 Github is offering service for hosting your **static pages** for free [Github Pages](http://pages.github.com) powered by Jekyll under the hod. This help you to deploy your Octopress blog easily. And git offer more flexible ways to manage your blog content.
