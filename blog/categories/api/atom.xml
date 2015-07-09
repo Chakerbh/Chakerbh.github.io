@@ -4,7 +4,7 @@
   <title><![CDATA[Category: api | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/api/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-09T13:59:44+01:00</updated>
+  <updated>2015-07-09T14:45:51+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -60,9 +60,85 @@ That&#39;s all now all we need is to prepare the regex and call the function. He
 <span class="n">tmdbregex</span> <span class="o">=</span> <span class="s">&quot;((api[-_.]?key)|api).*?[ =&#39;</span><span class="se">\&quot;</span><span class="s">\(]*(.*?)[&#39;</span><span class="se">\&quot;</span><span class="s">\)]*$&quot;</span> <span class="c"># Need a lot of work</span>
 <span class="c">#search_api_keys(tmdb, tmdbregex)</span>
 </code></pre></div>
-<p>For now this function will only get 10*100 results, But we can improve this. Github offer the possibility to search by language. So we can search for every programming language apart. This offer 10 time more results to try our regex (sometimes less it depends on the keyword). Jordan Wright discuss another way to get more results( you can check them at his <a href="http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html">blog</a>). For me this is OK for now</p>
+<p>For now this function will only get 10*100 results, But we can improve this. Github offer the possibility to search by language. So we can search for every programming language apart. This offer 10 time more results to try our regex (sometimes less it depends on the keyword). Jordan Wright discuss in his blog another way to get more results( you can check them <a href="http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html">here</a>). For me this is OK for now</p>
 
-<p>Final result</p>
+<p>Final result
+<figure class='code'><figcaption><span>&quot;Final snippet&quot; (githubsearch.py)</span> <a href='/gists/githubsearch.py'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="kn">import</span> <span class="nn">requests</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">re</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">search_api_keys</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">keyregex</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">numberOfKey</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">keyword</span><span class="o">+</span><span class="s">&quot;.txt&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">base</span> <span class="o">=</span><span class="s">&quot;https://raw.githubusercontent.com&quot;</span>
+</span><span class='line'>        <span class="n">l</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;https://github.com/search?q={}&amp;type=Code&amp;ref=searchresults&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">keyword</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">language</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;&lt;a href=&quot;(.*?)&quot;.*?ter-item&quot;&gt;&#39;</span><span class="p">,</span><span class="n">l</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
+</span><span class='line'>                <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">language</span> <span class="o">+</span> <span class="s">&quot;&amp;p={}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">page</span><span class="p">))</span>
+</span><span class='line'>                <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span>  <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;a href=&quot;(.*?)&quot; title&#39;</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
+</span><span class='line'>                    <span class="n">raw</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;/blob&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>                    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+</span><span class='line'>                    <span class="n">apikey</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">keyregex</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+</span><span class='line'>                    <span class="k">if</span> <span class="n">apikey</span> <span class="o">!=</span> <span class="p">[]:</span>
+</span><span class='line'>                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">apikey</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+</span><span class='line'>                        <span class="n">numberOfKey</span> <span class="o">+=</span><span class="mi">1</span>
+</span><span class='line'>        <span class="k">print</span> <span class="n">numberOfKey</span> <span class="o">+</span> <span class="s">&quot;Keys has been found&quot;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">rotten</span> <span class="o">=</span> <span class="s">&quot;rottentomatoes+api&quot;</span>
+</span><span class='line'><span class="n">rottenregex</span> <span class="o">=</span> <span class="s">&quot;api[-_]?key.*?[&#39;</span><span class="se">\&quot;</span><span class="s">]+(.{24})[&#39;</span><span class="se">\&quot;</span><span class="s">]&quot;</span>
+</span><span class='line'><span class="c">#search_api_keys(rotten, rottenregex)</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">twitter</span> <span class="o">=</span> <span class="s">&quot;consumer_key+twitte&quot;</span>
+</span><span class='line'><span class="n">twitterregex</span> <span class="o">=</span> <span class="s">&#39;(sumer|ken).*?=.*?(</span><span class="se">\&#39;</span><span class="s">|&quot;)(.{20,50}?)(</span><span class="se">\&#39;</span><span class="s">|&quot;)&#39;</span>
+</span><span class='line'><span class="c">#search_api_keys(twitter, twitterregex)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">tmdb</span> <span class="o">=</span> <span class="s">&quot;tmdb+api&quot;</span>
+</span><span class='line'><span class="n">tmdbregex</span> <span class="o">=</span> <span class="s">&quot;((api[-_.]?key)|api).*?[ =&#39;</span><span class="se">\&quot;</span><span class="s">\(]*(.*?)[&#39;</span><span class="se">\&quot;</span><span class="s">\)]*$&quot;</span>
+</span><span class='line'><span class="c">#search_api_keys(tmdb, tmdbregex)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">google</span> <span class="o">=</span> <span class="s">&quot;AIza+api&quot;</span>
+</span><span class='line'><span class="n">googleregex</span> <span class="o">=</span> <span class="s">&quot;(AIza.{35})&quot;</span>
+</span><span class='line'><span class="n">search_api_keys</span><span class="p">(</span><span class="n">google</span><span class="p">,</span> <span class="n">googleregex</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>But why you didn&#39;t simply use Github API</p>
 
