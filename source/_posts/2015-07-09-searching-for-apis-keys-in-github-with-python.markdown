@@ -32,7 +32,7 @@ for url in  re.findall('a href="(.*?)" title', req.text)
 
 Then transform it into the raw url. That we can apply the regex on it.
 ```python
-apikey =  re.findall(keyregex, r.text, re.I)
+raw = base + url.replace("/blob", "")
 ```
 That's all now all we need is to prepare the regex and call the function. Here some regex that I used them.
 
