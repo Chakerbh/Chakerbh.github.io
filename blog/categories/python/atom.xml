@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-10T03:04:12+01:00</updated>
+  <updated>2015-07-10T03:11:27+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -25,8 +25,7 @@
 <p>The <code>searchApiKey</code> function expect two parameters <code>keyword</code> and <code>regex</code>. 
 <code>python
     def searchApiKey(keyword, regex)
-</code>
-&lt;!-- more --&gt;</p>
+</code></p>
 
 <p>It use the <code>keyword</code> to search in Github. Then go through all 100 pages.</p>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;https://github.com/search?p={}&amp;q={}&amp;type=Code&amp;ref=searchresults&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">keyword</span><span class="p">))</span>
