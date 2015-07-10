@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-10T18:38:40+01:00</updated>
+  <updated>2015-07-10T22:59:44+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -34,19 +34,11 @@
 
 <ul>
 <li><a href="http://daringfireball.net/projects/markdown/">markdown</a>: posts in Octopress are written in markdown then transformed to HTML. And since I love to use it whenever it&#39;s possible (Github, Stackoverflow or writing emails), I found it convient to me.</li>
-<li>sharing code: With Octopress sharing snippets of code is easier then ever.  Either with markdown or with <a href="http://octopress.org/docs/plugins/gist-tag/">gist tag</a></li>
-</ul>
+<li><p>sharing code: With Octopress sharing snippets of code is easier then ever.  Either with markdown or with <a href="http://octopress.org/docs/plugins/gist-tag/">gist tag</a></p>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">something</span>
 <span class="k">print</span> <span class="s">&#39;markdown&#39;</span>
-</code></pre></div>
-<p>Gist: </p>
-
-<p><div><script src='https://gist.github.com/a1bff4a8c2e8f0534645.js'></script>
-<noscript><pre><code>print &quot;hello Gist&quot;</code></pre></noscript></div>
-</p>
-
-<ul>
-<li>Git: deploying of Octopress help me to learn more on git (All I knew before was clone, pull and push). And the process of posting helps me understand branches and practice them.</li>
+</code></pre></div></li>
+<li><p>Git: deploying of Octopress help me to learn more on git (All I knew before was clone, pull and push). And the process of posting helps me understand branches and practice them.</p></li>
 </ul>
 
 <p>To be continued...</p>
