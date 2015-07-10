@@ -63,7 +63,8 @@ tmdbregex = "((api[-_.]?key)|api).*?[ ='\"\(]*(.*?)['\"\)]*$" # Need a lot of wo
 For now this function will only get 10\*100 results, But we can improve this. Github offer the possibility to search by language. So we can search for every programming language apart. This offer 10 time more results to try our regex (sometimes less it depends on the keyword). Jordan Wright discuss in his blog another way to get more results( you can check them [here](http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html)). For me this is OK for now
 
 Final result
-{% include_code "Final snippet" githubsearch.py %}
+{% gist bbe2eabb0a7e33bf0c89 %}
+
 
 But why you didn't simply use Github API
 
