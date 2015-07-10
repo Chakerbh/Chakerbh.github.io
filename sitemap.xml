@@ -9,10 +9,16 @@
     <lastmod>2015-07-08T11:22:34+01:00</lastmod>
   </url>
   <url>
-    <loc>http://blog.chaker.tn/blog/archives/</loc>
+    <loc>http://blog.chaker.tn/</loc>
   </url>
   <url>
-    <loc>http://blog.chaker.tn/</loc>
+    <loc>http://blog.chaker.tn/archives/</loc>
+  </url>
+  <url>
+    <loc>http://blog.chaker.tn/categories/</loc>
+  </url>
+  <url>
+    <loc>http://blog.chaker.tn/posts/</loc>
   </url>
   <url>
     <loc>http://blog.chaker.tn/blog/categories/octopress/</loc>

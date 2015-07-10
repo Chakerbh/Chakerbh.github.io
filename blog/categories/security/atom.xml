@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: security | Chaker Benhamed]]></title>
+  <title><![CDATA[Category: Security | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/security/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-10T03:11:27+01:00</updated>
+  <updated>2015-07-10T18:38:40+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -14,11 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Searching for APIs keys in github with python]]></title>
+    <title type="html"><![CDATA[Searching for APIs Keys in Github With Python]]></title>
     <link href="http://blog.chaker.tn/blog/searching-for-apis-keys-in-github-with-python/"/>
     <updated>2015-07-09T01:16:25+01:00</updated>
     <id>http://blog.chaker.tn/blog/searching-for-apis-keys-in-github-with-python</id>
     <content type="html"><![CDATA[<p>I was inspired by the this post <a href="http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html">&quot;Automatically Enumerating Google API Keys from Github Search&quot;</a> by <a href="http://jordan-wright.com/">Jordan Wright</a> the creator of <a href="https://github.com/jordan-wright/dumpmon">dumpmon</a>. In which he discuss how to &quot;harvest&quot; google api key from github.</p>
+
+<!-- more -->
 
 <p>How it works?</p>
 
