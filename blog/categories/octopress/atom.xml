@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-10T01:59:17+01:00</updated>
+  <updated>2015-07-10T03:04:12+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -25,6 +25,8 @@
 <h3>Why github</h3>
 
 <p>Github is offering service for hosting your <strong>static pages</strong> for free <a href="http://pages.github.com">Github Pages</a> powered by Jekyll under the hod. This helps you to deploy your Octopress blog easily. And git offers more flexible ways to manage your blog content.</p>
+
+<!-- more -->
 
 <h3>You didn&#39;t tell me why Octopress</h3>
 
