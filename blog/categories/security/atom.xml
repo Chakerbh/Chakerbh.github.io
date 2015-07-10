@@ -4,7 +4,7 @@
   <title><![CDATA[Category: security | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/security/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-10T00:33:39+01:00</updated>
+  <updated>2015-07-10T01:59:17+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -38,7 +38,7 @@
 </code></pre></div>
 <p>Then transform it into the raw url. That we can apply the regex on it.
 <code>python
-apikey =  re.findall(keyregex, r.text, re.I)
+raw = base + url.replace(&quot;/blob&quot;, &quot;&quot;)
 </code>
 That&#39;s all now all we need is to prepare the regex and call the function. Here some regex that I used them.</p>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#couple of regexes:</span>

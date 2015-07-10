@@ -116,7 +116,7 @@
 
 <p>Then transform it into the raw url. That we can apply the regex on it.
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">apikey</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">keyregex</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">raw</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;/blob&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 That&#39;s all now all we need is to prepare the regex and call the function. Here some regex that I used them.</p>
 
