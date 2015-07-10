@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-11T00:10:06+01:00</updated>
+  <updated>2015-07-11T00:12:51+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -65,36 +65,46 @@ That&#39;s all now all we need is to prepare the regex and call the function. He
 <p>For now this function will only get 10*100 results, But we can improve this. Github offer the possibility to search by language. So we can search for every programming language apart. This offer 10 time more results to try our regex (sometimes less it depends on the keyword). Jordan Wright discuss in his blog another way to get more results( you can check them <a href="http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html">here</a>). For me this is OK for now</p>
 
 <p>Final result
-<figure class='code-highlight-figure'><figcaption class='code-highlight-caption'><span class='code-highlight-caption-title'>githubsearch.py</span><a class='code-highlight-caption-link' href='https://gist.github.com/bbe2eabb0a7e33bf0c89'>link</a></figcaption><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="kn">import</span> <span class="nn">requests</span>
-</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="kn">import</span> <span class="nn">re</span>
-</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">def</span> <span class="nf">search_api_keys</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">keyregex</span><span class="p">):</span>
-</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">numberOfKey</span> <span class="o">=</span> <span class="mi">0</span>
-</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">keyword</span><span class="o">+</span><span class="s">&quot;.txt&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="n">base</span> <span class="o">=</span><span class="s">&quot;https://raw.githubusercontent.com&quot;</span>
-</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="n">l</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;https://github.com/search?q=&#x7b;&#x7d;&amp;type=Code&amp;ref=searchresults&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">keyword</span><span class="p">))</span>
-</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="k">for</span> <span class="n">language</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;&lt;a href=&quot;(.*?)&quot;.*?ter-item&quot;&gt;&#39;</span><span class="p">,</span><span class="n">l</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
-</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>            <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
-</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'>                <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">language</span> <span class="o">+</span> <span class="s">&quot;&amp;p=&#x7b;&#x7d;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">page</span><span class="p">))</span>
-</div></div><div data-line='12' class='code-highlight-row numbered'><div class='code-highlight-line'>                <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span>  <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;a href=&quot;(.*?)&quot; title&#39;</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">text</span><span class="p">):</span>
-</div></div><div data-line='13' class='code-highlight-row numbered'><div class='code-highlight-line'>                    <span class="n">raw</span> <span class="o">=</span> <span class="n">base</span> <span class="o">+</span> <span class="n">url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;/blob&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-</div></div><div data-line='14' class='code-highlight-row numbered'><div class='code-highlight-line'>                    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
-</div></div><div data-line='15' class='code-highlight-row numbered'><div class='code-highlight-line'>                    <span class="n">apikey</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">keyregex</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
-</div></div><div data-line='16' class='code-highlight-row numbered'><div class='code-highlight-line'>                    <span class="k">if</span> <span class="n">apikey</span> <span class="o">!=</span> <span class="p">[]:</span>
-</div></div><div data-line='17' class='code-highlight-row numbered'><div class='code-highlight-line'>                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">apikey</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-</div></div><div data-line='18' class='code-highlight-row numbered'><div class='code-highlight-line'>                        <span class="n">numberOfKey</span> <span class="o">+=</span><span class="mi">1</span>
-</div></div><div data-line='19' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="k">print</span> <span class="n">numberOfKey</span> <span class="o">+</span> <span class="s">&quot;Keys has been found&quot;</span>        
-</div></div><div data-line='20' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='21' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='22' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">rotten</span> <span class="o">=</span> <span class="s">&quot;rottentomatoes+api&quot;</span>
-</div></div><div data-line='23' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">rottenregex</span> <span class="o">=</span> <span class="s">&quot;api[-_]?key.*?[&#39;</span><span class="se">\&quot;</span><span class="s">]+(.&#x7b;24&#x7d;)[&#39;</span><span class="se">\&quot;</span><span class="s">]&quot;</span>
-</div></div><div data-line='24' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c">#search_api_keys(rotten, rottenregex)</span>
-</div></div><div data-line='25' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='26' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='27' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">twitter</span> <span class="o">=</span> <span class="s">&quot;consumer_key+twitte&quot;</span>
-</div></div><div data-line='28' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">twitterregex</span> <span class="o">=</span> <span class="s">&#39;(sumer|ken).*?=.*?(</span><span class="se">\&#39;</span><span class="s">|&quot;)(.&#x7b;20,50&#x7d;?)(</span><span class="se">\&#39;</span><span class="s">|&quot;)&#39;</span>
-</div></div><div data-line='29' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c">#search_api_keys(twitter, twitterregex)</span>
-</div></div><div data-line='30' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='31' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">tmdb</span> <span class="o">=</span> <span class="s">&quot;tmdb+api&quot;</span>
-</div></div><div data-line='32' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">tmdbregex</span> <span class="o">=</span> <span class="s">&quot;((api[-_.]?key)|api).*?[ =&#39;</span><span class="se">\&quot;</span><span class="s">\(]*(.*?)[&#39;</span><span class="se">\&quot;</span><span class="s">\)]*$&quot;</span>
-</div></div><div data-line='33' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="c">#search_api_keys(tmdb, tmdbregex)</span>
-</div></div><div data-line='34' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='35' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">google</span> <span class="o">=</span> <span class="s">&quot;AIza+api&quot;</span>
-</div></div><div data-line='36' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">googleregex</span> <span class="o">=</span> <span class="s">&quot;(AIza.&#x7b;35&#x7d;)&quot;</span>
-</div></div><div data-line='37' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">search_api_keys</span><span class="p">(</span><span class="n">google</span><span class="p">,</span> <span class="n">googleregex</span><span class="p">)</span></div></div></pre></div></figure></p>
+<div><script src='https://gist.github.com/bbe2eabb0a7e33bf0c89.js'></script>
+<noscript><pre><code>import requests
+import re
+
+def search_api_keys(keyword, keyregex):
+    numberOfKey = 0
+    with open(keyword+&quot;.txt&quot;, &quot;a&quot;) as f:
+        base =&quot;https://raw.githubusercontent.com&quot;
+        l = requests.get(&quot;https://github.com/search?q={}&amp;type=Code&amp;ref=searchresults&quot;.format(keyword))
+        for language in re.findall('&lt;a href=&quot;(.*?)&quot;.*?ter-item&quot;&gt;',l.text):
+            for page in range(1,100):
+                req = requests.get(language + &quot;&amp;p={}&quot;.format(page))
+                for url in  re.findall('a href=&quot;(.*?)&quot; title', req.text):
+                    raw = base + url.replace(&quot;/blob&quot;, &quot;&quot;)
+                    r = requests.get(raw)
+                    apikey =  re.findall(keyregex, r.text, re.I)
+                    if apikey != []:
+                        f.write(apikey[0]+&quot;\n&quot;)
+                        numberOfKey +=1
+        print numberOfKey + &quot;Keys has been found&quot;        
+
+
+rotten = &quot;rottentomatoes+api&quot;
+rottenregex = &quot;api[-_]?key.*?['\&quot;]+(.{24})['\&quot;]&quot;
+#search_api_keys(rotten, rottenregex)
+
+
+twitter = &quot;consumer_key+twitte&quot;
+twitterregex = '(sumer|ken).*?=.*?(\'|&quot;)(.{20,50}?)(\'|&quot;)'
+#search_api_keys(twitter, twitterregex)
+
+tmdb = &quot;tmdb+api&quot;
+tmdbregex = &quot;((api[-_.]?key)|api).*?[ ='\&quot;\(]*(.*?)['\&quot;\)]*$&quot;
+#search_api_keys(tmdb, tmdbregex)
+
+google = &quot;AIza+api&quot;
+googleregex = &quot;(AIza.{35})&quot;
+search_api_keys(google, googleregex)
+</code></pre></noscript></div>
+</p>
 
 <p>But why you didn&#39;t simply use Github API</p>
 
