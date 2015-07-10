@@ -7,6 +7,8 @@ categories: python github API security
 ---
 I was inspired by the this post ["Automatically Enumerating Google API Keys from Github Search"](http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html) by [Jordan Wright](http://jordan-wright.com/) the creator of [dumpmon](https://github.com/jordan-wright/dumpmon). In which he discuss how to "harvest" google api key from github.
 
+<!-- more -->
+
 How it works?
 
 The `searchApiKey` function expect two parameters `keyword` and `regex`. 
