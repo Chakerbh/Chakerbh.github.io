@@ -4,6 +4,8 @@ title: "Searching for APIs keys in github with python"
 date: 2015-07-09 01:16:25 +0100
 comments: true
 categories: python github API security 
+image:
+  feature: /images/vim.jpg
 ---
 I was inspired by the this post ["Automatically Enumerating Google API Keys from Github Search"](http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html) by [Jordan Wright](http://jordan-wright.com/) the creator of [dumpmon](https://github.com/jordan-wright/dumpmon). In which he discuss how to "harvest" google api key from github.
 

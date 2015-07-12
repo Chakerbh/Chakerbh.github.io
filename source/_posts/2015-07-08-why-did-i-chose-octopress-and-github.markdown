@@ -4,6 +4,8 @@ title: "Why I did chose Octopress &amp; Github"
 date: 2015-07-08 11:22:34 +0100
 comments: true
 categories: octopress Github
+image:
+  feature: /images/vim.jpg
 ---
 
 ### What's Octopress
