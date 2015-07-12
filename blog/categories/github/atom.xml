@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Github | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-12T13:08:16+01:00</updated>
+  <updated>2015-07-12T13:39:54+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -124,28 +124,38 @@ search_api_keys(google, googleregex)
     <link href="http://blog.chaker.tn/blog/why-did-i-chose-octopress-and-github/"/>
     <updated>2015-07-08T11:22:34+01:00</updated>
     <id>http://blog.chaker.tn/blog/why-did-i-chose-octopress-and-github</id>
-    <content type="html"><![CDATA[<h3>What&#39;s Octopress</h3>
+    <content type="html"><![CDATA[<h2>What&#39;s Octopress</h2>
 
 <p><a href="http://octopress.org">Octopress</a> is &quot;A blogging framework for hackers&quot;. It&#39;s based on <a href="http://jekyllrb.com/">Jekyll</a> Which is ruby statics web generator. Octopress is for <strong>hackers</strong> so you should be familiar with shell and git commands or at least have the courage to try.</p>
 
 <!-- more -->
 
-<h3>Why github</h3>
+<h2>Why github</h2>
 
 <p>Github is offering service for hosting your <strong>static pages</strong> for free <a href="http://pages.github.com">Github Pages</a> powered by Jekyll under the hod. This helps you to deploy your Octopress blog easily. And git offers more flexible ways to manage your blog content.</p>
 
-<h3>You didn&#39;t tell me why Octopress</h3>
+<h2>You didn&#39;t tell me why Octopress</h2>
 
 <p>I chose Octopress for couple of reasons:</p>
 
 <ul>
 <li><a href="http://daringfireball.net/projects/markdown/">markdown</a>: posts in Octopress are written in markdown then transformed to HTML. And since I love to use it whenever it&#39;s possible (Github, Stackoverflow or writing emails), I found it convient to me.</li>
-<li><p>sharing code: With Octopress sharing snippets of code is easier then ever.  Either with markdown or with <a href="http://octopress.org/docs/plugins/gist-tag/">gist tag</a></p>
+<li>sharing code: With Octopress sharing snippets of code is easier then ever.  Either with markdown or with <a href="http://octopress.org/docs/plugins/gist-tag/">gist tag</a></li>
+</ul>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">something</span>
 <span class="k">print</span> <span class="s">&#39;markdown&#39;</span>
-</code></pre></div></li>
-<li><p>Git: deploying of Octopress help me to learn more on git (All I knew before was clone, pull and push). And the process of posting helps me understand branches and practice them.</p></li>
+</code></pre></div>
+<p><div><script src='https://gist.github.com/a1bff4a8c2e8f0534645.js'></script>
+<noscript><pre><code>print &quot;hello Gist&quot;</code></pre></noscript></div>
+</p>
+
+<ul>
+<li>Git: deploying of Octopress help me to learn more on git (All I knew before was clone, pull and push). And the process of posting helps me understand branches and practice them.</li>
 </ul>
+
+<h2>Theme:</h2>
+
+<p>I&#39;m a big fun of <a href="https://github.com/octopress/solarized">solarized</a> theme I love to use it every place I can. However in octopress there are some problems with gists and markdown. So I decided to take a look on others <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">themes</a>. Until I found <a href="https://github.com/jez/hpstr-theme/">HPSTR</a>. This blog is now using HPSTR and I don&#39;t think that I will change it in the near future.</p>
 
 <p>To be continued...</p>
 ]]></content>

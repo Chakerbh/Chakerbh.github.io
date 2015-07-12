@@ -130,7 +130,7 @@
 
 <h2>The idea:</h2>
 
-<p>It&#39;s very simple, all we gonna do is to test our proxies:</p>
+<p>It&#39;s very simple, all we going to do is to test our proxies:</p>
 
 <ol>
 <li>Test connectivity.</li>
@@ -142,13 +142,13 @@
 
 <ul>
 <li>Python: DAHH!!!</li>
-<li>We gonna use <a href="http://docs.python-requests.org/en/latest/">requests</a> module for the HTTP requests. If you don&#39;t already have it you should take a look. And if you don&#39;t wanna to install it you can simply follow on but you have to adapt the function to your library of choice.</li>
+<li>We gonna use <a href="http://docs.python-requests.org/en/latest/">requests</a> module for the HTTP requests. If you don&#39;t already have it you should take a look. And if you don&#39;t want to install it you can simply follow on but you have to adapt the function to your library of choice.</li>
 <li>Proxy list to test. If you don&#39;t have one just google it.</li>
 </ul>
 
 <h2>Check a single proxy:</h2>
 
-<p>First let&#39;s start by creating a function that test a single proxy. The function will load a webpage and return False if there are error during the request. Then check if the title is in the HTML or not and then return the result.</p>
+<p>First let&#39;s start by creating a function that test a single proxy. The function will load a webpage and returns False if there are error during the request. Then checks if the title is in the HTML or not and then returns the result.</p>
 
 <figure class='code'><figcaption><span>Check single proxy </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -172,13 +172,13 @@
 </span><span class='line'>    <span class="k">return</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span> <span class="c"># Else check if title is in the HTML and return the result.</span>
 </span></code></pre></td></tr></table></div></figure>
 
-<p>By default this function will try to connect to <code>http://example.com</code> with a timeout of <code>5</code> seconds. If every thing passed OK it will check the presence of <code>&lt;title&gt;Example Domain&lt;/title&gt;</code> and return the result. </p>
+<p>By default this function will try to connect to <code>http://example.com</code> with a timeout of <code>5</code> seconds. If every thing passed OK it will check the presence of <code>&lt;title&gt;Example Domain&lt;/title&gt;</code> and returns the result. </p>
 
-<p>OK Now we have a function that test if a given proxy is valid or not. But I wanna to check a proxy list? So we need to speed things up. Since checking every proxy aside will take time. We should try threads.</p>
+<p>OK Now we have a function that test if a given proxy is valid or not. But I want to check a proxy list? So we need to speed things up. Since checking every proxy aside will take time. We should try threads.</p>
 
 <h2>Using threads:</h2>
 
-<p>Checking a proxy list with a single thread is very slow. But implementing threaded solution to this problem is not quite straightforward. So I do a little search and I found <a href="http://stackoverflow.com/a/2635066/4237058">this</a>. And with some modification I ended up with this:</p>
+<p>Checking a proxy list with a single thread is very slow. But implementing threaded solution to this problem is not quite straightforward. So I did a little search and I found <a href="http://stackoverflow.com/a/2635066/4237058">this</a>. And with some modification I ended up with this:</p>
 
 <div><script src='https://gist.github.com/e47e21aa36995783b690.js'></script>
 <noscript><pre><code>import requests
@@ -244,7 +244,7 @@ except KeyboardInterrupt:
 
 <p>So I run it on on <code>6k</code> proxy list and It&#39;s reasonably fast. </p>
 
-<p>This script will print the valid proxy to <code>stdout</code>. But it should be no problem to redirect it to file or to modifie it to write it directly to a file. Feel free to modifie and/or to use the script. And don&#39;t forget to comment below.</p>
+<p>This script will print the valid proxy to <code>stdout</code>. But it should be no problem to redirect it to file or to modify it to write it directly to a file. Feel free to modify and/or to use the script. And don&#39;t forget to comment below.</p>
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="/categories/#python" title="Pages tagged python" class="tag">python</a><a href="/categories/#security" title="Pages tagged security" class="tag">security</a><a href="/categories/#proxy" title="Pages tagged proxy" class="tag">proxy</a></span>
