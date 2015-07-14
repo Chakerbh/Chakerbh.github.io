@@ -12,6 +12,10 @@ description: Computer engineering student. Security enthusiast, CTF fan and play
 
 # HPSTR Theme
 author_bio: I'm a Computer engineering student at the university of TUNIS EL MANAR. Security enthusiast, CTF fan and player, VIM addict and more.
+avatar: /images/avatar.jpeg
+email: mail@chaker.tn
+
+
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -23,7 +27,6 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
 
 # ----------------------- #
 #    Jekyll & Plugins     #
