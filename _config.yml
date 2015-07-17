@@ -84,6 +84,9 @@ twitter_tweet_button: true
 google_plus_one: false
 google_plus_one_size: medium
 
+# Reddit
+stackoverflow_user: 4237058
+
 # Google Plus Profile
 # Hidden: No visible button, just add author information to search results
 googleplus_user:
