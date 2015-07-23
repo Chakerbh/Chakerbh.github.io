@@ -3,7 +3,7 @@ layout: post
 title: "Creating Basic Proxy Checker With Python"
 date: 2015-07-12 11:03:54 +0100
 comments: true
-categories: Python security proxy
+categories: Python security
 image:
   feature: /images/vim.jpg
 ---

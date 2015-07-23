@@ -3,7 +3,7 @@ layout: post
 title: "Searching for APIs keys in github with python"
 date: 2015-07-09 01:16:25 +0100
 comments: true
-categories: python github API security 
+categories: github security 
 image:
   feature: /images/vim.jpg
 ---
