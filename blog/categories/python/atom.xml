@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Chaker Benhamed]]></title>
   <link href="http://blog.chaker.tn/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.chaker.tn/"/>
-  <updated>2015-07-17T16:30:34+01:00</updated>
+  <updated>2015-07-23T23:44:46+01:00</updated>
   <id>http://blog.chaker.tn/</id>
   <author>
     <name><![CDATA[Chaker Benhamed]]></name>
@@ -131,112 +131,6 @@ except KeyboardInterrupt:
 
 <p>This script will print the valid proxy to <code>stdout</code>. But it should be no problem to redirect it to file or to modify it to write it directly to a file. Feel free to modify and/or to use the script. And don&#39;t forget to comment below.</p>
 ]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Searching for APIs Keys in Github With Python]]></title>
-    <link href="http://blog.chaker.tn/blog/searching-for-apis-keys-in-github-with-python/"/>
-    <updated>2015-07-09T01:16:25+01:00</updated>
-    <id>http://blog.chaker.tn/blog/searching-for-apis-keys-in-github-with-python</id>
-    <content type="html"><![CDATA[<p>I was inspired by the this post <a href="http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html">&quot;Automatically Enumerating Google API Keys from Github Search&quot;</a> by <a href="http://jordan-wright.com/">Jordan Wright</a> the creator of <a href="https://github.com/jordan-wright/dumpmon">dumpmon</a>. In which he discuss how to &quot;harvest&quot; google api key from github.</p>
-
-<!-- more -->
-
-<p>How it works?</p>
-
-<p>The <code>searchApiKey</code> function expect two parameters <code>keyword</code> and <code>regex</code>. 
-<code>python
-    def searchApiKey(keyword, regex)
-</code></p>
-
-<p>It use the <code>keyword</code> to search in Github. Then go through all 100 pages.</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;https://github.com/search?p={}&amp;q={}&amp;type=Code&amp;ref=searchresults&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">keyword</span><span class="p">))</span>
-</code></pre></div>
-<p>Here I run into problem since the code is formated in HTML so the regex won&#39;t work properly . 
-<img src="/images/googleapikey.png" title="&quot;Github html code&quot;" ></p>
-
-<p>For that I decided to fetch the url of every code snippet.</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">url</span> <span class="ow">in</span>  <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;a href=&quot;(.*?)&quot; title&#39;</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</code></pre></div>
-<p>Then transform it into the raw url. That we can apply the regex on it.
-<code>python
-raw = base + url.replace(&quot;/blob&quot;, &quot;&quot;)
-</code>
-That&#39;s all now all we need is to prepare the regex and call the function. Here some regex that I used them.</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#couple of regexes:</span>
-
-<span class="n">rotten</span> <span class="o">=</span> <span class="s">&quot;rottentomatoes+api&quot;</span>
-<span class="n">rottenregex</span> <span class="o">=</span> <span class="s">&quot;api[-_]?key.*?[&#39;</span><span class="se">\&quot;</span><span class="s">]+(.{24})[&#39;</span><span class="se">\&quot;</span><span class="s">]&quot;</span>
-<span class="c">#search_api_keys(rotten, rottenregex)</span>
-
-
-<span class="n">twitter</span> <span class="o">=</span> <span class="s">&quot;consumer_key+twitte&quot;</span>
-<span class="n">twitterregex</span> <span class="o">=</span> <span class="s">&#39;(sumer|ken).*?=.*?(</span><span class="se">\&#39;</span><span class="s">|&quot;)(.{20,50}?)(</span><span class="se">\&#39;</span><span class="s">|&quot;)&#39;</span>    <span class="c"># Need some work </span>
-<span class="c">#search_api_keys(twitter, twitterregex)</span>
-
-<span class="n">google</span> <span class="o">=</span> <span class="s">&quot;AIza+api&quot;</span>
-<span class="n">googleregex</span> <span class="o">=</span> <span class="s">&quot;(AIza.{35})&quot;</span>
-<span class="c">#search_api_keys(google, googleregex)</span>
-
-<span class="n">tmdb</span> <span class="o">=</span> <span class="s">&quot;tmdb+api&quot;</span>
-<span class="n">tmdbregex</span> <span class="o">=</span> <span class="s">&quot;((api[-_.]?key)|api).*?[ =&#39;</span><span class="se">\&quot;</span><span class="s">\(]*(.*?)[&#39;</span><span class="se">\&quot;</span><span class="s">\)]*$&quot;</span> <span class="c"># Need a lot of work</span>
-<span class="c">#search_api_keys(tmdb, tmdbregex)</span>
-</code></pre></div>
-<p>For now this function will only get 10*100 results, But we can improve this. Github offer the possibility to search by language. So we can search for every programming language apart. This offer 10 time more results to try our regex (sometimes less it depends on the keyword). Jordan Wright discuss in his blog another way to get more results( you can check them <a href="http://raidersec.blogspot.com/2013/03/automatically-enumerating-google-api.html">here</a>). For me this is OK for now</p>
-
-<p>Final result
-<div><script src='https://gist.github.com/bbe2eabb0a7e33bf0c89.js'></script>
-<noscript><pre><code>import requests
-import re
-
-def search_api_keys(keyword, keyregex):
-    numberOfKey = 0
-    with open(keyword+&quot;.txt&quot;, &quot;a&quot;) as f:
-        base =&quot;https://raw.githubusercontent.com&quot;
-        l = requests.get(&quot;https://github.com/search?q={}&amp;type=Code&amp;ref=searchresults&quot;.format(keyword))
-        for language in re.findall('&lt;a href=&quot;(.*?)&quot;.*?ter-item&quot;&gt;',l.text):
-            for page in range(1,100):
-                req = requests.get(language + &quot;&amp;p={}&quot;.format(page))
-                for url in  re.findall('a href=&quot;(.*?)&quot; title', req.text):
-                    raw = base + url.replace(&quot;/blob&quot;, &quot;&quot;)
-                    r = requests.get(raw)
-                    apikey =  re.findall(keyregex, r.text, re.I)
-                    if apikey != []:
-                        f.write(apikey[0]+&quot;\n&quot;)
-                        numberOfKey +=1
-        print numberOfKey + &quot;Keys has been found&quot;        
-
-
-rotten = &quot;rottentomatoes+api&quot;
-rottenregex = &quot;api[-_]?key.*?['\&quot;]+(.{24})['\&quot;]&quot;
-#search_api_keys(rotten, rottenregex)
-
-
-twitter = &quot;consumer_key+twitte&quot;
-twitterregex = '(sumer|ken).*?=.*?(\'|&quot;)(.{20,50}?)(\'|&quot;)'
-#search_api_keys(twitter, twitterregex)
-
-tmdb = &quot;tmdb+api&quot;
-tmdbregex = &quot;((api[-_.]?key)|api).*?[ ='\&quot;\(]*(.*?)['\&quot;\)]*$&quot;
-#search_api_keys(tmdb, tmdbregex)
-
-google = &quot;AIza+api&quot;
-googleregex = &quot;(AIza.{35})&quot;
-search_api_keys(google, googleregex)
-</code></pre></noscript></div>
-</p>
-
-<p>But why you didn&#39;t simply use Github API</p>
-
-<p>Indeed Github is offering search in the API, But when I checked the <a href="https://developer.github.com/v3/search/">documentaion</a> I found out that you can only search for code inside specific repository. And that doesn&#39;t help us at all.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&quot;message&quot;: &quot;Validation Failed&quot;,
-&quot;errors&quot;: [
-{
-      &quot;message&quot;: &quot;Must include at least one user, organization, or repository&quot;,
-      &quot;resource&quot;: &quot;Search&quot;,
-      &quot;field&quot;: &quot;q&quot;,
-      &quot;code&quot;: &quot;invalid&quot;
-</code></pre></div>]]></content>
   </entry>
   
 </feed>

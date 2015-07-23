@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Vim | Chaker Benhamed]]></title>
+  <link href="http://blog.chaker.tn/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://blog.chaker.tn/"/>
+  <updated>2015-07-23T23:44:46+01:00</updated>
+  <id>http://blog.chaker.tn/</id>
+  <author>
+    <name><![CDATA[Chaker Benhamed]]></name>
+    <email><![CDATA[mail@chaker.tn]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vimoverflow: Search Stackoverflow From VIM]]></title>
+    <link href="http://blog.chaker.tn/blog/vimoverflow-search-stackoverflow-from-vim/"/>
+    <updated>2015-07-23T23:01:55+01:00</updated>
+    <id>http://blog.chaker.tn/blog/vimoverflow-search-stackoverflow-from-vim</id>
+    <content type="html"><![CDATA[<h2>Introduction:</h2>
+
+<p>After I read this funny article <a href="http://www.theallium.com/engineering/computer-programming-to-be-officially-renamed-googling-stackoverflow/">Computer Programming To Be Officially Renamed “Googling
+Stackoverflow”</a>.
+I get the idea to create a plugin to search stacoverflow from VIM. So I start my
+journey into Vim scripting which doesn&#39;t last very long! It was hard to begin
+with especially to develop a plugin that do some scarping.</p>
+
+<!-- more -->
+
+<h2>How I did it:</h2>
+
+<p>I used python to search using Google. And then extract the result from
+Stackoverflow. With the help of 3rd party libraries it was very easy to put
+things on the right track.</p>
+
+<h2>Installation:</h2>
+
+<p>If you don&#39;t have a plugin manager I recommend
+<a href="http://https://github.com/VundleVim/Vundle.vim">Vundle</a>.</p>
+
+<h4>Vundle</h4>
+
+<p>Add the following to your <code>~/.vimrc</code> file and run <code>PluginInstall</code> in Vim.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Plugin &#39;Chakerbh/vimoverflow&#39;
+</code></pre></div>
+<h2>How to use it:</h2>
+
+<p>All you need to do is to run:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">:VimOverflow ques
+</code></pre></div>
+<p>Where ques is your question</p>
+
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">:VimOverflow length of list python
+
+
+The len function can be used with a lot of types in Python - both built-in types and library types.
+&gt;&gt;len([1,2,3])
+3
+</code></pre></div>
+<h2>Fork it:</h2>
+
+<p>You can fork it on <a href="https://github.com/chakerbh/vimoverflow">Github</a>. And if you have any question feel free to ask in the comment section below.</p>
+]]></content>
+  </entry>
+  
+</feed>

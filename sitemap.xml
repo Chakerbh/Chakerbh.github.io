@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.chaker.tn/blog/vimoverflow-search-stackoverflow-from-vim/</loc>
+    <lastmod>2015-07-23T23:01:55+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://blog.chaker.tn/blog/creating-basic-proxy-checker-with-python/</loc>
     <lastmod>2015-07-12T11:03:54+01:00</lastmod>
   </url>
@@ -31,16 +35,13 @@
     <loc>http://blog.chaker.tn/blog/categories/github/</loc>
   </url>
   <url>
-    <loc>http://blog.chaker.tn/blog/categories/python/</loc>
-  </url>
-  <url>
-    <loc>http://blog.chaker.tn/blog/categories/api/</loc>
-  </url>
-  <url>
     <loc>http://blog.chaker.tn/blog/categories/security/</loc>
   </url>
   <url>
-    <loc>http://blog.chaker.tn/blog/categories/proxy/</loc>
+    <loc>http://blog.chaker.tn/blog/categories/python/</loc>
+  </url>
+  <url>
+    <loc>http://blog.chaker.tn/blog/categories/vim/</loc>
   </url>
   <url>
     <loc>http://blog.chaker.tn/google6fcac8d500232949.html</loc>
